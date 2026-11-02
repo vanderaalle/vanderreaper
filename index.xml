@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="vanderreaper">
+<index version="1" name="vanderreaper" commit="00c70709c16ce1ea1de77cb27fb501fbb4f32462">
   <category name="Piper cues">
     <reapack name="vanderaalle_Piper cue at edit cursor.lua" type="script" desc="Piper cue at edit cursor (offline text-to-speech)">
       <metadata>
@@ -8,8 +8,8 @@
 \widowctrl\hyphauto
 
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Piper cue at edit cursor\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Type a text, get it spoken by a local Piper neural voice and placed as an item at the edit cursor on a "Cues" track (created if missing). Meant for spoken cues sent to performers live ("Section B, in four", "Tacet"...), but works for any voice-over placeholder.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Fully offline and free: no API key, no internet. Works in any language Piper has a voice for (50+): the voice sets the language, so pick e.g. a German voice and type German text. Voice and speed are remembered between runs.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Type a text, get it spoken by a local Piper neural voice and placed as an item at the edit cursor on the track you name ("Cues" by default; created if missing). Meant for spoken cues sent to performers live ("Section B, in four", "Tacet"...), but works just as well for spoken notes to yourself (use a "Notes" track) or any voice-over placeholder.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Fully offline and free: no API key, no internet. Works in any language Piper has a voice for (50+): the voice sets the language, so pick e.g. a German voice and type German text. Voice, speed and track are remembered between runs.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Requires Piper ({\f1 pip install piper-tts}) and at least one voice (.onnx + .onnx.json) from https://huggingface.co/rhasspy/piper-voices. Run "Piper cue settings" once to point the script to Piper and the voices folder.\par}
 }
 ]]></description>
@@ -18,6 +18,12 @@
       <version name="1.0.0" author="Andrea Valle (vanderaalle)" time="2026-11-02T22:57:30Z">
         <source main="main">https://github.com/vanderaalle/vanderreaper/raw/d30d148dc96586096e44f4fcbce8f5959d6cab46/Piper%20cues/vanderaalle_Piper%20cue%20at%20edit%20cursor.lua</source>
         <source main="main" file="vanderaalle_Piper cue settings.lua">https://github.com/vanderaalle/vanderreaper/raw/d30d148dc96586096e44f4fcbce8f5959d6cab46/Piper%20cues/vanderaalle_Piper%20cue%20settings.lua</source>
+      </version>
+      <version name="1.1.0" author="Andrea Valle (vanderaalle)" time="2026-11-02T23:08:16Z">
+        <changelog><![CDATA[Track name field in the dialog (default "Cues"): send cues, notes or
+anything else to the track you name; created if missing, remembered.]]></changelog>
+        <source main="main">https://github.com/vanderaalle/vanderreaper/raw/00c70709c16ce1ea1de77cb27fb501fbb4f32462/Piper%20cues/vanderaalle_Piper%20cue%20at%20edit%20cursor.lua</source>
+        <source main="main" file="vanderaalle_Piper cue settings.lua">https://github.com/vanderaalle/vanderreaper/raw/00c70709c16ce1ea1de77cb27fb501fbb4f32462/Piper%20cues/vanderaalle_Piper%20cue%20settings.lua</source>
       </version>
     </reapack>
   </category>
