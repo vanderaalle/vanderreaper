@@ -9,7 +9,12 @@ Made for spoken cues sent to performers in live electronics ("Section B, in
 four", "Tacet", "Fermata"...), but useful for any voice-over placeholder.
 
 - Free and fully offline: no API key, no account, no internet.
-- Neural voices in [many languages](https://huggingface.co/rhasspy/piper-voices).
+- **Any language Piper has a voice for**, currently 40+ (English, German,
+  French, Spanish, Italian, Dutch, Polish, Russian, Chinese, Arabic…, see the
+  [voice list](https://huggingface.co/rhasspy/piper-voices)). The language
+  comes with the voice: choose a German voice and type German text, and the
+  cue is spoken in German. Mix languages in the same project just by switching
+  voice.
 - No REAPER extensions needed (no SWS, no ReaImGui).
 - One undo step per cue; voice and speed are remembered.
 
@@ -48,8 +53,10 @@ four", "Tacet", "Fermata"...), but useful for any voice-over placeholder.
 Run **Piper cue at edit cursor** (assign it a shortcut). The dialog asks:
 
 - **Cue text**
-- **Voice**: the voice file name or any unique part of it (`amy`, `paola`);
-  empty = first voice in the folder
+- **Voice**: the voice file name or any unique part of it (`amy`,
+  `thorsten`, `paola`); empty = first voice in the folder. The voice sets
+  the language, so write the text in that language (the script does not
+  translate).
 - **Speed**: 1.0 = normal, 1.2 = faster, 0.8 = slower
 
 WAVs are saved in the project media folder under `cues/`. The item is named
