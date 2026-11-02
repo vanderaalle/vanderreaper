@@ -13,7 +13,7 @@
 --   but works for any voice-over placeholder.
 --
 --   Fully offline and free: no API key, no internet. Works in any language
---   Piper has a voice for (40+): the voice sets the language, so pick e.g. a
+--   Piper has a voice for (50+): the voice sets the language, so pick e.g. a
 --   German voice and type German text. Voice and speed are remembered
 --   between runs.
 --

@@ -9,7 +9,7 @@ Made for spoken cues sent to performers in live electronics ("Section B, in
 four", "Tacet", "Fermata"...), but useful for any voice-over placeholder.
 
 - Free and fully offline: no API key, no account, no internet.
-- **Any language Piper has a voice for**, currently 40+ (English, German,
+- **Any language Piper has a voice for**, currently 50+ (English, German,
   French, Spanish, Italian, Dutch, Polish, Russian, Chinese, Arabic…, see the
   [voice list](https://huggingface.co/rhasspy/piper-voices)). The language
   comes with the voice: choose a German voice and type German text, and the
