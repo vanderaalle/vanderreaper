@@ -1,6 +1,9 @@
 -- @description Piper cue at edit cursor (offline text-to-speech)
 -- @author Andrea Valle (vanderaalle)
--- @version 1.0.0
+-- @version 1.1.0
+-- @changelog
+--   Track name field in the dialog (default "Cues"): send cues, notes or
+--   anything else to the track you name; created if missing, remembered.
 -- @license MIT
 -- @provides [main] vanderaalle_Piper cue settings.lua
 -- @link https://github.com/vanderaalle/vanderreaper/tree/main/Piper%20cues
@@ -8,14 +11,15 @@
 --   # Piper cue at edit cursor
 --
 --   Type a text, get it spoken by a local Piper neural voice and placed as an
---   item at the edit cursor on a "Cues" track (created if missing). Meant for
---   spoken cues sent to performers live ("Section B, in four", "Tacet"...),
---   but works for any voice-over placeholder.
+--   item at the edit cursor on the track you name ("Cues" by default; created
+--   if missing). Meant for spoken cues sent to performers live ("Section B,
+--   in four", "Tacet"...), but works just as well for spoken notes to
+--   yourself (use a "Notes" track) or any voice-over placeholder.
 --
 --   Fully offline and free: no API key, no internet. Works in any language
 --   Piper has a voice for (50+): the voice sets the language, so pick e.g. a
---   German voice and type German text. Voice and speed are remembered
---   between runs.
+--   German voice and type German text. Voice, speed and track are
+--   remembered between runs.
 --
 --   Requires Piper (`pip install piper-tts`) and at least one voice
 --   (.onnx + .onnx.json) from https://huggingface.co/rhasspy/piper-voices.
@@ -73,7 +77,7 @@ local function cue_track(name)
 end
 
 -- Returns an error message, or nil on success.
-function place_cue(text, voice, speed)
+function place_cue(text, voice, speed, track)
   local piper = setting("piper", "piper")
   local dir = setting("voices_dir", reaper.GetResourcePath() .. SEP .. "piper_voices")
   local voices = voices_in(dir)
@@ -114,7 +118,8 @@ function place_cue(text, voice, speed)
 
   local pos = reaper.GetCursorPosition()
   reaper.Undo_BeginBlock()
-  local item = reaper.AddMediaItemToTrack(cue_track(setting("track", "Cues")))
+  if not track or track == "" then track = setting("track", "Cues") end
+  local item = reaper.AddMediaItemToTrack(cue_track(track))
   local take = reaper.AddTakeToMediaItem(item)
   reaper.SetMediaItemTake_Source(take, src)
   reaper.GetSetMediaItemTakeInfo_String(take, "P_NAME", text, true)
@@ -127,19 +132,21 @@ end
 -- Test hook: a caller can set PIPER_CUE_NO_UI and call place_cue() itself.
 if PIPER_CUE_NO_UI then return end
 
-local ok, input = reaper.GetUserInputs("Piper cue at edit cursor", 3,
-  "Cue text:,Voice (name or part of it):,Speed (1.0 = normal):,separator=\n,extrawidth=250",
-  "\n" .. setting("voice", "") .. "\n" .. setting("speed", "1.0"))
+local ok, input = reaper.GetUserInputs("Piper cue at edit cursor", 4,
+  "Cue text:,Voice (name or part of it):,Speed (1.0 = normal):,Track (created if missing):,separator=\n,extrawidth=250",
+  "\n" .. setting("voice", "") .. "\n" .. setting("speed", "1.0") .. "\n" .. setting("track", "Cues"))
 if not ok then return end
-local text, voice, speed = input:match("^(.-)\n(.-)\n(.*)$")
+local text, voice, speed, track = input:match("^(.-)\n(.-)\n(.-)\n(.*)$")
 local function trim(s) return s:match("^%s*(.-)%s*$") end
 text, voice, speed = trim(text):gsub("%s+", " "), trim(voice), trim(speed):gsub(",", ".")
+track = trim(track) ~= "" and trim(track) or "Cues"
 if text == "" then return end
 
-local err = place_cue(text, voice, speed)
+local err = place_cue(text, voice, speed, track)
 if err then
   reaper.ShowMessageBox(err, "Piper cue", 0)
 else
   reaper.SetExtState(EXT, "voice", voice, true)
   reaper.SetExtState(EXT, "speed", speed, true)
+  reaper.SetExtState(EXT, "track", track, true)
 end

@@ -3,10 +3,11 @@
 Offline text-to-speech cues in REAPER. Place the edit cursor, run the action,
 type the text: a natural-sounding voice is synthesized locally with
 [Piper](https://github.com/OHF-Voice/piper1-gpl) and placed as an item at the
-cursor on a **Cues** track.
+cursor on the track you name (**Cues** by default).
 
 Made for spoken cues sent to performers in live electronics ("Section B, in
-four", "Tacet", "Fermata"...), but useful for any voice-over placeholder.
+four", "Tacet", "Fermata"...), but just as handy for spoken notes to
+yourself on a **Notes** track, or any voice-over placeholder.
 
 - Free and fully offline: no API key, no account, no internet.
 - **Any language Piper has a voice for**, currently 50+ (English, German,
@@ -16,7 +17,7 @@ four", "Tacet", "Fermata"...), but useful for any voice-over placeholder.
   cue is spoken in German. Mix languages in the same project just by switching
   voice.
 - No REAPER extensions needed (no SWS, no ReaImGui).
-- One undo step per cue; voice and speed are remembered.
+- One undo step per cue; voice, speed and track are remembered.
 
 ## Install
 
@@ -45,8 +46,8 @@ four", "Tacet", "Fermata"...), but useful for any voice-over placeholder.
    this folder into REAPER's `Scripts` folder and load them via
    *Actions → New action → Load ReaScript…*.
 
-4. Run **Piper cue settings** once: set the full path of the Piper executable,
-   the voices folder and (optionally) the cue track name.
+4. Run **Piper cue settings** once: set the full path of the Piper executable
+   and the voices folder.
 
 ## Use
 
@@ -58,6 +59,8 @@ Run **Piper cue at edit cursor** (assign it a shortcut). The dialog asks:
   the language, so write the text in that language (the script does not
   translate).
 - **Speed**: 1.0 = normal, 1.2 = faster, 0.8 = slower
+- **Track**: where the item goes, e.g. `Cues` (default), `Notes`; created if
+  missing
 
 WAVs are saved in the project media folder under `cues/`. The item is named
 after the text, so cues are readable in the arrange view.

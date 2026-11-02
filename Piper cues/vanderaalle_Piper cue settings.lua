@@ -1,15 +1,14 @@
 -- @noindex
--- Settings for "Piper cue at edit cursor": Piper executable, voices folder,
--- name of the cue track.
+-- Settings for "Piper cue at edit cursor": Piper executable and voices
+-- folder.
 
 local EXT = "vanderaalle_piper_cue"
 local SEP = package.config:sub(1, 1)
 
-local keys = { "piper", "voices_dir", "track" }
+local keys = { "piper", "voices_dir" }
 local defaults = {
   piper = "piper",
   voices_dir = reaper.GetResourcePath() .. SEP .. "piper_voices",
-  track = "Cues",
 }
 
 local current = {}
@@ -18,8 +17,8 @@ for i, k in ipairs(keys) do
   current[i] = v ~= "" and v or defaults[k]
 end
 
-local ok, input = reaper.GetUserInputs("Piper cue settings", 3,
-  "Piper executable (full path):,Voices folder (.onnx files):,Cue track name:,separator=\n,extrawidth=350",
+local ok, input = reaper.GetUserInputs("Piper cue settings", 2,
+  "Piper executable (full path):,Voices folder (.onnx files):,separator=\n,extrawidth=350",
   table.concat(current, "\n"))
 if not ok then return end
 
