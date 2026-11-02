@@ -1,18 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="vanderreaper" commit="d30d148dc96586096e44f4fcbce8f5959d6cab46">
+<index version="1" name="vanderreaper">
   <category name="Piper cues">
     <reapack name="vanderaalle_Piper cue at edit cursor.lua" type="script" desc="Piper cue at edit cursor (offline text-to-speech)">
       <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Piper cue at edit cursor\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Type a text, get it spoken by a local Piper neural voice and placed as an item at the edit cursor on a "Cues" track (created if missing). Meant for spoken cues sent to performers live ("Section B, in four", "Tacet"...), but works for any voice-over placeholder.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Fully offline and free: no API key, no internet. Works in any language Piper has a voice for (50+): the voice sets the language, so pick e.g. a German voice and type German text. Voice and speed are remembered between runs.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Requires Piper ({\f1 pip install piper-tts}) and at least one voice (.onnx + .onnx.json) from https://huggingface.co/rhasspy/piper-voices. Run "Piper cue settings" once to point the script to Piper and the voices folder.\par}
+}
+]]></description>
         <link rel="website">https://github.com/vanderaalle/vanderreaper/tree/main/Piper%20cues</link>
       </metadata>
-      <version name="1.0.0" author="Andrea Valle (vanderaalle)" time="2026-11-02T23:57:30+01:00">
+      <version name="1.0.0" author="Andrea Valle (vanderaalle)" time="2026-11-02T22:57:30Z">
         <source main="main">https://github.com/vanderaalle/vanderreaper/raw/d30d148dc96586096e44f4fcbce8f5959d6cab46/Piper%20cues/vanderaalle_Piper%20cue%20at%20edit%20cursor.lua</source>
         <source main="main" file="vanderaalle_Piper cue settings.lua">https://github.com/vanderaalle/vanderreaper/raw/d30d148dc96586096e44f4fcbce8f5959d6cab46/Piper%20cues/vanderaalle_Piper%20cue%20settings.lua</source>
       </version>
     </reapack>
   </category>
   <metadata>
-    <description><![CDATA[{\rtf1\ansi REAPER scripts by Andrea Valle (vanderaalle).}]]></description>
+    <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 vanderreaper\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 ReaScripts for {\field{\*\fldinst{HYPERLINK "https://www.reaper.fm"}}{\fldrslt{\ul
+REAPER
+}}}
+ by Andrea Valle (vanderaalle), mostly for live electronics and composition work.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Install with ReaPack\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\i Extensions \u8594 ? ReaPack \u8594 ? Import repositories\u8230 ?} and paste:\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 https://github.com/vanderaalle/vanderreaper/raw/main/index.xml\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Then browse the packages with {\i Extensions \u8594 ? ReaPack \u8594 ? Browse packages}.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Scripts\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 | Package | What it does | |---|---| | {\field{\*\fldinst{HYPERLINK "Piper%20cues/"}}{\fldrslt{\ul
+Piper cues
+}}}
+ | Offline text-to-speech: type a text, get it spoken by a local neural voice (50+ languages) and placed at the edit cursor. Made for spoken cues to performers. |\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 License\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 MIT \u8212- see {\field{\*\fldinst{HYPERLINK "LICENSE"}}{\fldrslt{\ul
+LICENSE
+}}}
+.\par}
+}
+]]></description>
     <link rel="website">https://github.com/vanderaalle/vanderreaper</link>
   </metadata>
 </index>
