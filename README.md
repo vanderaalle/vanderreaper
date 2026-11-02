@@ -1,14 +1,14 @@
-# REAPER scripts by Andrea Valle
+# vanderreaper
 
-ReaScripts for [REAPER](https://www.reaper.fm), mostly for live electronics
-and composition work.
+ReaScripts for [REAPER](https://www.reaper.fm) by Andrea Valle
+(vanderaalle), mostly for live electronics and composition work.
 
 ## Install with ReaPack
 
 *Extensions → ReaPack → Import repositories…* and paste:
 
 ```
-https://github.com/vanderaalle/reaper-scripts/raw/main/index.xml
+https://github.com/vanderaalle/vanderreaper/raw/main/index.xml
 ```
 
 Then browse the packages with *Extensions → ReaPack → Browse packages*.

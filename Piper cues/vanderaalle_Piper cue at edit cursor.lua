@@ -3,7 +3,7 @@
 -- @version 1.0.0
 -- @license MIT
 -- @provides [main] vanderaalle_Piper cue settings.lua
--- @link https://github.com/vanderaalle/reaper-scripts/tree/main/Piper%20cues
+-- @link https://github.com/vanderaalle/vanderreaper/tree/main/Piper%20cues
 -- @about
 --   # Piper cue at edit cursor
 --

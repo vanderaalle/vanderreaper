@@ -38,7 +38,7 @@ four", "Tacet", "Fermata"...), but useful for any voice-over placeholder.
    paste
 
    ```
-   https://github.com/vanderaalle/reaper-scripts/raw/main/index.xml
+   https://github.com/vanderaalle/vanderreaper/raw/main/index.xml
    ```
 
    then install *Piper cue at edit cursor*. Or copy the two `.lua` files from
