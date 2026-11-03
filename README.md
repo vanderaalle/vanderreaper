@@ -17,7 +17,7 @@ Then browse the packages with *Extensions → ReaPack → Browse packages*.
 
 | Package | What it does |
 |---|---|
-| [Piper cues](Piper%20cues/) | Offline text-to-speech: place the edit cursor, run the action and type a text. It is spoken by a local neural voice (50+ languages) and placed right at the cursor. Made for spoken cues to performers, handy for spoken notes too. |
+| [Piper cues](Piper%20cues/) | Offline text-to-speech: place the edit cursor, run the action and type a text. It is spoken by a local neural voice (50+ languages) and placed at the cursor on a separate track you choose (Cues by default, or Notes, etc.). Made for spoken cues to performers, handy for spoken notes too. |
 
 ## License
 
